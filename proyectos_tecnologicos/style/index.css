@@ -1,0 +1,218 @@
+@media (prefers-color-scheme: light){
+    :root {
+    --header-footer: #607a94;     /*header, footer*/
+    --dashboard-bg: #879fb9;      /* Sidebar*/
+    --main-bg: #ecf0f1;           /* Fondo*/
+    --primary: #3498db;           /* Botones*/
+    --primary-hover: #4381ab;     /* Hover*/
+    --text-main: #2c3e50;         /* Texto principal */
+    --text-secondary: #7f8c8d;    /* Texto secundario */
+}
+}
+@media (prefers-color-scheme: dark){
+    :root {
+    --header-footer: #1e293b;      /* Header, footer */
+    --dashboard-bg: #222838;       /* Sidebar */
+    --main-bg: #0b1220;            /* Fondo general */
+    --primary: #3d688d;            /* Botones */
+    --primary-hover: #84aed8;      /* Hover */
+    --text-main: #f1f5f9;          /* Texto principal */
+    --text-secondary: #94a3b8;     /* Texto secundario */
+}
+}
+
+header {
+    position: sticky;
+    top: 0; 
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--header-footer);
+    z-index: 1000;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul {
+    list-style: none;
+    margin-right: 5%;
+    display: flex;
+    flex: 1;
+}
+header ul li{
+    flex: 1;
+}
+header ul li a{
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+header ul li a:hover{
+    text-decoration: underline;
+    color: var(--text-secondary);
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text-main);
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: var(--dashboard-bg);
+    color: white;
+    height: 60%;
+    margin-top: 60px;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    border-radius: 20px;
+}
+
+.sidebar a img{
+    margin-right: 10%;
+    vertical-align: middle;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+}
+
+.sidebar a *{
+    display: inline-block;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+}
+
+/* Contenido principal */
+.main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas:
+        "a a a b b b b"
+        "a a a b b b b"
+        "a a a c c c c"
+        "d d d c c c c"
+        "d d d c c c c"
+        "d d d e e e e"
+        "d d d e e e e"
+        "f f f f f f f"
+        "f f f f f f f";
+    gap: 10px;
+
+    margin-left: 220px; 
+    padding: 50px;
+
+    height: calc(95vh - 50px - 50px);
+}
+
+.main :hover{
+    transform: scale(0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transition-delay: 5ms;
+    transition-duration: 2ms;
+}
+
+.hackaton {
+    grid-area: a;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.fullstack {
+    grid-area: b;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.ajustes {
+    grid-area: c;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.perfil {
+    grid-area: d;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.contacta {
+    grid-area: f;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+.futuros_proyectos {
+    grid-area: e;
+    padding: 1cap;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+/* contenido del footer */
+.footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-footer);
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+}
+
+/* cambiar las imagenes png negras a blancas y viceversa */
+#raton{
+    filter: invert(1) brightness(2);
+}
+/* cambiar el display para movil */
+@media (max-width: 770px) {
+    .main {
+        margin-left: 0;
+        justify-content: center; 
+        grid-template-areas:
+        "a a a a a a a"
+        "a a a a a a a"
+        "b b b b b b b"
+        "b b b b b b b"
+        "c c c c c c c"
+        "c c c c c c c"
+        "d d d d d d d"
+        "d d d d d d d"
+        "e e e e e e e"
+        "e e e e e e e"
+        "f f f f f f f"
+        "f f f f f f f"
+        ;
+    gap: 10px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+    header ul li a{
+        font-size: 7px;
+
+}
+}
